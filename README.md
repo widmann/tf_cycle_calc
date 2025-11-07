@@ -2,7 +2,7 @@
 
 A calculator to convert from different units of temporal and spectral resolution of Morlet wavelets to cycles for time-frequency analysis of M/EEG data.
 
-------------------------------------------------------------------------
+---
 
 Morlet-type wavelets consist of a (co-)sine wave multiplied by a Gaussian envelope in the time domain and a corresponding Gaussian function in the frequency domain. The temporal and spectral resolutions of a specific wavelet are defined by the "width" of the Gaussian function, that is, the standard deviation $\sigma_{t}$ (typically in seconds) or $\sigma_{f}$ (typically in Hertz).
 
@@ -10,7 +10,7 @@ Many software packages for wavelet-based time-frequency analysis of M/EEG data u
 
 The TF cycles calculator computes the cycles parameter from different units of temporal or spectral resolution, including temporal and spectral FWHM, $\sigma_{t}$ and $\sigma_{f}$, 2 $\sigma_{t}$ and 2 $\sigma_{f}$ per wavelet center frequency. The calculator can also convert from cycles to any unit and report and visualize the wavelet resolution per center frequency. This is useful for appropriately reporting resolution in publications, for example. The calculator can be used on the MATLAB command line or as an EEGLAB GUI function, which can be called from the pop_newtimef EEGLAB GUI.
 
-![Morlet wavelet](morlet.png)<br>
+![Morlet wavelet](morlet.png)\
 **Figure 1.** Real (cosine) part of a Morlet wavelet with 20 Hz center frequency and 7 cycles width in the time and frequency domain.
 
 The FWHM unit is closely related to the -6 dB cutoff frequencies that are typically reported in spectral filtering for band-pass filters. Many manuscripts applying the Morlet wavelet transform traditionally reported 2 $\sigma_{t}$ and/or 2 $\sigma_{f}$ units (e.g., Tallon-Baudry et al., 1996).
