@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # tf_cycle_calc
 
 A calculator to convert from different units of temporal and spectral
@@ -31,22 +25,22 @@ suggestion cannot (easily) be applied to existing software packages.
 
 The TF cycles calculator computes the cycles parameter from different
 units of temporal or spectral resolution, including temporal and
-spectral FWHM, $\sigma_{t}$ and $\sigma_{f}$, 2$\sigma_{t}$ and
-2$\sigma_{f}$ per wavelet center frequency. The calculator can also
+spectral FWHM, $\sigma_{t}$ and $\sigma_{f}$, 2 $\sigma_{t}$ and
+2 $\sigma_{f}$ per wavelet center frequency. The calculator can also
 convert from cycles to any unit and report and visualize the wavelet
 resolution per center frequency. This is useful for appropriately
 reporting resolution in publications, for example. The calculator can be
 used on the MATLAB command line or as an EEGLAB GUI function, which can
 be called from the pop_newtimef EEGLAB GUI.
 
-![**Figure 1.** Real (cosine) part of a Morlet wavelet with 20 Hz center
+![Morlet wavelet](morlet.png "**Figure 1.** Real (cosine) part of a Morlet wavelet with 20 Hz center
 frequency and 7 cycles width in the time and frequency
-domain.](morlet.png)
+domain.")
 
 The FWHM unit is closely related to the -6 dB cutoff frequencies that
 are typically reported in spectral filtering for band-pass filters. Many
 manuscripts applying the Morlet wavelet transform traditionally reported
-2$\sigma_{t}$ and/or 2$\sigma_{f}$ units (e.g., Tallon-Baudry et al.,
+2 $\sigma_{t}$ and/or 2 $\sigma_{f}$ units (e.g., Tallon-Baudry et al.,
 1996).
 
 An example application can be found in `demo_cohen2019.m` which results
@@ -84,12 +78,12 @@ function.](demo_cohen2019_eeglab-1.png)
 Requested `'width'` is specified per frequency or as min/max
 (interpolated in linear or log spaced steps accordingly). If a scalar
 value is specified it is held constant for all frequenies, that is, STFT
-(Gabor transform) is computed in case of FWHM, 2$\sigma$, or $\sigma$,
+(Gabor transform) is computed in case of FWHM, 2 $\sigma$, or $\sigma$,
 and Morlet wavelet transform in case of cycles.
 
 The `widths_table` output reports the wavelet resolution per frequency
-in the units cycles, spectral FWHM, temporal FWHM, 2$\sigma_{f}$,
-2$\sigma_{t}$, $\sigma_{f}$, and $\sigma_{t}$.
+in the units cycles, spectral FWHM, temporal FWHM, 2 $\sigma_{f}$,
+2 $\sigma_{t}$, $\sigma_{f}$, and $\sigma_{t}$.
 
 ## GUI example
 
