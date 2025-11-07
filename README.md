@@ -10,19 +10,21 @@ Many software packages for wavelet-based time-frequency analysis of M/EEG data u
 
 The TF cycles calculator computes the cycles parameter from different units of temporal or spectral resolution, including temporal and spectral FWHM, $\sigma_{t}$ and $\sigma_{f}$, 2 $\sigma_{t}$ and 2 $\sigma_{f}$ per wavelet center frequency. The calculator can also convert from cycles to any unit and report and visualize the wavelet resolution per center frequency. This is useful for appropriately reporting resolution in publications, for example. The calculator can be used on the MATLAB command line or as an EEGLAB GUI function, which can be called from the pop_newtimef EEGLAB GUI.
 
-![Morlet wavelet](morlet.png)
-
-~**Figure 1.** Real (cosine) part of a Morlet wavelet with 20 Hz center frequency and 7 cycles width in the time and frequency domain.~
+![Morlet wavelet](morlet.png)<br>
+**Figure 1.** Real (cosine) part of a Morlet wavelet with 20 Hz center frequency and 7 cycles width in the time and frequency domain.
 
 The FWHM unit is closely related to the -6 dB cutoff frequencies that are typically reported in spectral filtering for band-pass filters. Many manuscripts applying the Morlet wavelet transform traditionally reported 2 $\sigma_{t}$ and/or 2 $\sigma_{f}$ units (e.g., Tallon-Baudry et al., 1996).
 
 An example application can be found in `demo_cohen2019.m` which results in Figures 2 and 3 below. This conceptually replicates Figure 5, Panels A and B from Cohen (2019) using the provided demo data. The TF transforms are displayed in Figure 2. The boxes indicate the temporal and spectral FWHM at low, intermediate and high frequencies (note that the area of all boxes is constant). The effects of parameter selection on different features of the TF decomposition are evident. Figure 3 visualizes the corresponding temporal and spectral wavelet resolutions and cycles per wavelet center frequency. `demo_cohen2019_eeglab.m` replicates Figure 2 using EEGLAB's pop_newtimef function (rather than the built-in simple TF transform intended for demonstration purposes). The output is displayed in Figure 4.
 
-![**Figure 2.** TF transforms with constant temporal FWHM of 0.1 and 0.5 s (STFT analog to Gabor transform; Panels A and B), constant 7 cycles (analog to Morlet wavelet transform; Panel C), variable cycles from 3 to 8 (Panel D), variable temporal FWHM from 0.5 to 0.2 s (Panel E) and variable spectral FWHM from 2 to 6 Hz (Panel F).](demo_cohen2019-1.png)
+![TF transforms with different parameters](demo_cohen2019-1.png)<br>
+**Figure 2.** TF transforms with constant temporal FWHM of 0.1 and 0.5 s (STFT analog to Gabor transform; Panels A and B), constant 7 cycles (analog to Morlet wavelet transform; Panel C), variable cycles from 3 to 8 (Panel D), variable temporal FWHM from 0.5 to 0.2 s (Panel E) and variable spectral FWHM from 2 to 6 Hz (Panel F).
 
-![**Figure 3.** Temporal and spectral wavelet resolutions and cycles per wavelet center frequency corresponding to the TF transforms displayed in Figures 2 and 4.](demo_cohen2019-2.png)
+![Temporal and spectral resolution](demo_cohen2019-2.png)<br>
+**Figure 3.** Temporal and spectral wavelet resolutions and cycles per wavelet center frequency corresponding to the TF transforms displayed in Figures 2 and 4.
 
-![**Figure 4.** Replication of Figure 2 with EEGLAB's pop_newtimef function.](demo_cohen2019_eeglab-1.png)
+![Replication of Figure 2 with EEGLAB](demo_cohen2019_eeglab-1.png)<br>
+**Figure 4.** Replication of Figure 2 with EEGLAB's pop_newtimef function.
 
 ## CLI example
 
@@ -36,7 +38,9 @@ The `widths_table` output reports the wavelet resolution per frequency in the un
 
 ## GUI example
 
-## ![](gui.png)References
+![](gui.png)
+
+## References
 
 -   Cohen, M. X. (2019). A better way to define and describe Morlet wavelets for time-frequency analysis. *Neuroimage, 199*, 81-86. DOI: 10.1016/j.neuroimage.2019.05.048.
 
