@@ -32,7 +32,7 @@ An example application can be found in `demo_cohen2019.m` which results in Figur
 [cycles, widths_table] = tf_cycle_calc('freqs', 2:2:40, 'width', [0.5 0.2], 'width_unit', 'fwhm_t', 'log_spaced', 0, 'plot', 1)
 ```
 
-Requested `'width'` is specified per frequency or as min/max (interpolated in linear or log spaced steps accordingly). If a scalar value is specified it is held constant for all frequenies, that is, STFT (Gabor transform) is computed in case of FWHM, 2 $\sigma$, or $\sigma$, and Morlet wavelet transform in case of cycles.
+Requested `'width'` is specified per frequency or as min/max (interpolated in linear or log spaced steps accordingly). If a scalar value is specified it is held constant for all frequencies, that is, STFT (Gabor transform) is computed in case of FWHM, 2 $\sigma$, or $\sigma$, and Morlet wavelet transform in case of cycles.
 
 The `widths_table` output reports the wavelet resolution per frequency in the units cycles, spectral FWHM, temporal FWHM, 2 $\sigma_{f}$, 2 $\sigma_{t}$, $\sigma_{f}$, and $\sigma_{t}$.
 
