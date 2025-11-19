@@ -187,7 +187,7 @@ if isfield(Args, 'data') && ~isempty(Args.data)
         error('Requested sampling frequency input argument required.')
     end
     if ~isfield(Args, 'norm') || isempty(Args.norm)
-        Args.norm = 1;
+        Args.norm = 0;
     end
 
     [tf_data, cmorlf] = my_tf(Args.data, Args.fs, Args.freqs', sigma_f', Args.norm);
@@ -200,7 +200,9 @@ if isfield(Args, 'plot') && Args.plot
     % widths_table
 
     hFig = findobj('tag', 'FigCycleCalc');
-    if isempty(findobj('tag', 'FigCycleCalc')) || isfield(Args, 'data')
+    if isfield(Args, 'data')
+        figure
+    elseif isempty(findobj('tag', 'FigCycleCalc'))
         hFig = figure;
         set(hFig, 'Tag', 'FigCycleCalc')
     else
@@ -234,6 +236,8 @@ if isfield(Args, 'plot') && Args.plot
         imagesc((0:length(Args.data) - 1) / Args.fs, Args.freqs, 2 * abs(tf_data').^2) % Correct for onesided spectrum
         colorbar
         set(hAx(4), 'YDir', 'normal')
+        xlabel('Time [s]'), ylabel('Frequency [Hz]')
+        title('Time frequency transform')
     end
 
     set(hAx, 'XGrid', 'on', 'YGrid', 'on')
